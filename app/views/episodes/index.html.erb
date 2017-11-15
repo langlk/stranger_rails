@@ -1,0 +1,15 @@
+<h1>Episodes</h1>
+
+<% if @episodes.any? %>
+  <ul>
+    <% @episodes.each do |episode| %>
+      <li>
+        <%= link_to episode.title, episode_path(episode) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>There are no episodes saved!</h3>
+<% end %>
+
+<p> <%= link_to "Add an Episode", new_episode_path %> </p>
