@@ -2,6 +2,8 @@
   <h5> <%= link_to "Back to Episode", episode_path(@episode) %> </h5>
   <h1>Scenes from <%= @episode.title %></h1>
 
+  <p> <%= link_to "Add a Scene", new_episode_scene_path(@episode) %> </p>
+
   <% if @episode.plotlines.any? %>
     <ul>
       <% @episode.plotlines.each do |plotline| %>

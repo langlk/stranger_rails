@@ -1,17 +1,35 @@
 <%= render 'layouts/errors', object: @scene %>
 
-<%= form_for [@plotline, @scene] do |f| %>
-  <div class="form-group">
-    <%= f.label :description, class: "control-label" %>
-    <%= f.text_field :description, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :episode, class: "control-label" %>
-    <%= f.collection_select :episode_id, Episode.all, :id, :title, {}, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :plotline, class: "control-label" %>
-    <%= f.collection_select :plotline_id, Plotline.all, :id, :name, {}, class: "form-control" %>
-  </div>
-  <%= f.submit class: "btn" %>
+<% if @plotline %>
+  <%= form_for [@plotline, @scene] do |f| %>
+    <div class="form-group">
+      <%= f.label :description, class: "control-label" %>
+      <%= f.text_field :description, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :episode, class: "control-label" %>
+      <%= f.collection_select :episode_id, Episode.all, :id, :title, {}, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :plotline, class: "control-label" %>
+      <%= f.collection_select :plotline_id, Plotline.all, :id, :name, {selected: @plotline.id}, class: "form-control" %>
+    </div>
+    <%= f.submit class: "btn" %>
+  <% end %>
+<% elsif @episode %>
+  <%= form_for [@episode, @scene] do |f| %>
+    <div class="form-group">
+      <%= f.label :description, class: "control-label" %>
+      <%= f.text_field :description, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :episode, class: "control-label" %>
+      <%= f.collection_select :episode_id, Episode.all, :id, :title, {selected: @episode.id}, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :plotline, class: "control-label" %>
+      <%= f.collection_select :plotline_id, Plotline.all, :id, :name, {}, class: "form-control" %>
+    </div>
+    <%= f.submit class: "btn" %>
+  <% end %>
 <% end %>
