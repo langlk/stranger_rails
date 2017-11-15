@@ -1,0 +1,13 @@
+<h1>Plotlines</h1>
+
+<% if @plotlines.any? %>
+  <ul>
+    <% @plotlines.each do |plotline| %>
+      <li>
+        <%= link_to plotline.name, plotline_path(plotline) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>There are no Plotlines saved.</h3>
+<% end %>

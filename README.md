@@ -9,13 +9,21 @@
   * CRUD functionality
   * List alphabetically by Title
   * List chronologically
-* Plot Points
+* Plotlines
   * Eleven
   * Kids
   * Teens
   * "WILL!"
   * Town infection
-  * List episodes by plot point
+  * Read-only:
+    * Index
+    * Detail Page
+  * List episodes by plotline
+* Scenes
+  * Episode
+  * Plotline
+  * Description
+  * CRUD
 * Featured Episode (RNG)
 * Users
   * Name
