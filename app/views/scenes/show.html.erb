@@ -5,3 +5,11 @@
 <h4> Episode: <%= link_to "Season #{@scene.episode.season}, Episode #{@scene.episode.number}", episode_path(@scene.episode) %> </h4>
 
 <h4> Plotline: <%= link_to @scene.plotline.name, plotline_path(@scene.plotline) %> </h4>
+<hr>
+<p>
+  <%= link_to "Edit", edit_scene_path(@scene) %> |
+  <%= link_to "Delete", scene_path(@scene), data: {
+      confirm: "This will delete all content for this scene. Are you sure?",
+      method: "delete"
+    } %>
+</p>
