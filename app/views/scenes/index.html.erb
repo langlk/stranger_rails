@@ -1,21 +1,34 @@
 <% if @episode %>
   <h5> <%= link_to "Back to Episode", episode_path(@episode) %> </h5>
   <h1>Scenes from <%= @episode.title %></h1>
-<% end %>
 
-<% if @episode.plotlines.any? %>
-  <ul>
-    <% @episode.plotlines.each do |plotline| %>
-      <li>
-        <h4> <%= link_to plotline.name, plotline_path(plotline) %> </h4>
-        <ul>
-          <% Scene.intersect(plotline, @episode).each do |scene| %>
-            <li> <%= link_to scene.description, scene_path(scene) %> </li>
-          <% end %>
-        </ul>
-      </li>
-    <% end %>
-  </ul>
+  <% if @episode.plotlines.any? %>
+    <ul>
+      <% @episode.plotlines.each do |plotline| %>
+        <li>
+          <h4> <%= link_to plotline.name, plotline_path(plotline) %> </h4>
+          <ul>
+            <% Scene.intersect(plotline, @episode).each do |scene| %>
+              <li> <%= link_to scene.description, scene_path(scene) %> </li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <h3>There are no saved scenes for this episode.</h3>
+  <% end %>
 <% else %>
-  <h3>There are no saved scenes for this episode.</h3>
+  <h1>All Scenes</h1>
+  <% if @scenes.any? %>
+    <ul>
+      <% @scenes.each do |scene| %>
+        <li>
+          <%= link_to scene.description, scene_path(scene) %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <h3>There are no saved scenes.</h3>
+  <% end %>
 <% end %>

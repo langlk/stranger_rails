@@ -2,6 +2,8 @@ class ScenesController < ApplicationController
   def index
     if params[:episode_id]
       @episode = Episode.find(params[:episode_id])
+    else
+      @scenes = Scene.all
     end
   end
 
@@ -44,7 +46,7 @@ class ScenesController < ApplicationController
     @scene = Scene.find(params[:id])
     @scene.destroy
     flash[:notice] = "Scene has been taken by the Demogorgon."
-    redirect_to root_path
+    redirect_to scenes_path
   end
 
 private
