@@ -6,6 +6,9 @@ describe Episode do
   it { should validate_presence_of :number }
   it { should validate_presence_of :rating }
 
+  it { should have_many :scenes }
+  it { should have_many :plotlines }
+
   describe '.chronological' do
     it "returns episodes sorted by season and episode number" do
       e1 = Episode.create(
