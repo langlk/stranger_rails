@@ -1,0 +1,19 @@
+<% if @episode %>
+  <h1>Reviews of <%= @episode.title %> </h1>
+
+  <p> <%= link_to "Write a Review", new_episode_review_path(@episode) %> </p>
+<% else %>
+  <h1>Reviews</h1>
+<% end %>
+
+<% if @reviews.any? %>
+  <ul>
+    <% @reviews.each do |review| %>
+      <li>
+        <%= link_to "#{review.episode.title} by #{review.author}", review_path(review) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>There are no reviews saved.</h3>
+<% end %>

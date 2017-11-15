@@ -1,6 +1,11 @@
 class ReviewsController < ApplicationController
   def index
-    @reviews = Review.all
+    if params[:episode_id]
+      @episode = Episode.find(params[:episode_id])
+      @reviews = @episode.reviews
+    else
+      @reviews = Review.all
+    end
   end
 
   def show

@@ -7,6 +7,8 @@
 <p> <%= @episode.description %> </p>
 
 <h4> <%= link_to "Scenes from this Episode", episode_scenes_path(@episode) %> </h4>
+<h4> <%= link_to "Reviews of this Episode", episode_reviews_path(@episode) %> </h4>
+
 <hr>
 <p>
   <%= link_to "Edit", edit_episode_path(@episode) %> |
