@@ -3,3 +3,21 @@
 <p><%= @plotline.description %></p>
 
 <p> <%= link_to "Add a Scene", new_plotline_scene_path(@plotline) %> </p>
+
+<% if @plotline.episodes.any? %>
+  <h3>Furthered In</h3>
+  <ul>
+    <% @plotline.episodes.each do |episode| %>
+      <li>
+        <h4> <%= link_to "#{episode.title} - Season #{episode.season}, Episode #{episode.number}", episode_path(episode) %> </h4>
+        <ul>
+          <% episode.scenes.each do |scene| %>
+            <li> <%= link_to scene.description, scene_path(scene) %> </li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>There are no episodes connected to this plotline.</h3>
+<% end %>
