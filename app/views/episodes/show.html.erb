@@ -1,0 +1,16 @@
+<h5> <%= link_to "Back to Episodes", episodes_path %> </h5>
+<h1> <%= @episode.title %> </h1>
+<h4>Rated <%= @episode.rating %> of 5 stars</h4>
+<hr>
+<h3> Season <%= @episode.season %>, Episode <%= @episode.number %> </h3>
+
+
+<p> <%= @episode.description %> </p>
+<hr>
+<p>
+  <%= link_to "Edit", edit_episode_path(@episode) %> |
+  <%= link_to "Delete", episode_path(@episode), data: {
+    confirm: "This will delete all content for this episode. Are you sure?",
+    method: "delete"
+  } %>
+</p>

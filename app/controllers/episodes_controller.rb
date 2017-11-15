@@ -21,6 +21,27 @@ class EpisodesController < ApplicationController
     end
   end
 
+  def edit
+    @episode = Episode.find(params[:id])
+  end
+
+  def update
+    @episode = Episode.find(params[:id])
+    if @episode.update(episode_params)
+      flash[:notice] = "Episode updated!"
+      redirect_to episode_path(@episode)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @episode = Episode.find(params[:id])
+    @episode.destroy
+    flash[:notice] = "Episode '#{@episode.title}' was taken by the Demogorgon."
+    redirect_to episodes_path
+  end
+
 private
   def episode_params
     params.require(:episode).permit(:title, :season, :number, :description, :rating)
