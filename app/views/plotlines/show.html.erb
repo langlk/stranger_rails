@@ -7,11 +7,11 @@
 <% if @plotline.episodes.any? %>
   <h3>Furthered In</h3>
   <ul>
-    <% @plotline.episodes.each do |episode| %>
+    <% @plotline.episodes.chronological.each do |episode| %>
       <li>
         <h4> <%= link_to "#{episode.title} - Season #{episode.season}, Episode #{episode.number}", episode_path(episode) %> </h4>
         <ul>
-          <% episode.scenes.each do |scene| %>
+          <% Scene.intersect(@plotline, episode).each do |scene| %>
             <li> <%= link_to scene.description, scene_path(scene) %> </li>
           <% end %>
         </ul>
