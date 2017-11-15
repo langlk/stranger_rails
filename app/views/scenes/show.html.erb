@@ -1,0 +1,7 @@
+<h1>Scene Detail</h1>
+
+<p> <%= @scene.description %> </p>
+
+<h4> Episode: <%= link_to "Season #{@scene.episode.season}, Episode #{@scene.episode.number}", episode_path(@scene.episode) %> </h4>
+
+<h4> Plotline: <%= link_to @scene.plotline.name, plotline_path(@scene.plotline) %> </h4>
