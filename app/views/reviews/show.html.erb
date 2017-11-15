@@ -1,0 +1,16 @@
+<h1>Review of <%= @review.episode.title %> </h1>
+
+<h3>By <%= @review.author %></h3>
+
+<p> <%= @review.content %> </p>
+
+<h5>Rating: <%= @review.rating %> of 5 Stars</h5>
+
+<hr>
+<p>
+  <%= link_to "Edit", edit_review_path(@review) %> |
+  <%= link_to "Delete", review_path(@review), data: {
+    confirm: "This will delete all content for this review. Are you sure?",
+    method: "delete"
+  } %>
+</p>

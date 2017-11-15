@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   root :to => 'episodes#index'
 
   resources :scenes, only: [:index]
-  
+  resources :reviews, only: [:index]
+
   resources :episodes do
     resources :scenes, shallow: true
+    resources :reviews, shallow: true
   end
 
   resources :plotlines, only: [:show, :index] do
