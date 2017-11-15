@@ -1,6 +1,11 @@
 <h1>Episodes</h1>
 
 <% if @episodes.any? %>
+  <%= form_tag('/episodes', method: 'get') do %>
+    <%= label_tag(:method, "Sort Episodes") %>
+    <%= select_tag(:method, options_for_select([["Chronological", "chronological"], ["Alphabetical", "alphabetical"]], @method), class: "form-control") %>
+    <%= submit_tag("Sort", class: "btn") %>
+  <% end %>
   <ul>
     <% @episodes.each do |episode| %>
       <li>

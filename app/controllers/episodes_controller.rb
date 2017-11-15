@@ -1,6 +1,16 @@
 class EpisodesController < ApplicationController
   def index
-    @episodes = Episode.all
+    if params['method']
+      @method = params['method']
+      if @method == 'chronological'
+        @episodes = Episode.chronological
+      else
+        @episodes = Episode.alphabetical
+      end
+    else
+      @method = 'chronological'
+      @episodes = Episode.chronological
+    end
   end
 
   def show
