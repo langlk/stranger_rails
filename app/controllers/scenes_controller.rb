@@ -1,4 +1,10 @@
 class ScenesController < ApplicationController
+  def index
+    if params[:episode_id]
+      @episode = Episode.find(params[:episode_id])
+    end
+  end
+
   def new
     if params[:plotline_id]
       @plotline = Plotline.find(params[:plotline_id])
