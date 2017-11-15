@@ -8,6 +8,7 @@ describe Episode do
 
   it { should have_many :scenes }
   it { should have_many :plotlines }
+  it { should have_many :reviews }
 
   describe '.chronological' do
     it "returns episodes sorted by season and episode number" do
