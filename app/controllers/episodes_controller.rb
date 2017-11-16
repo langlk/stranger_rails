@@ -47,6 +47,12 @@ class EpisodesController < ApplicationController
 
   def destroy
     @episode = Episode.find(params[:id])
+    @episode.reviews.each do |review|
+      review.destroy
+    end
+    @episode.scenes.each do |scene|
+      scene.destroy
+    end
     @episode.destroy
     flash[:notice] = "Episode '#{@episode.title}' was taken by the Demogorgon."
     redirect_to episodes_path
