@@ -6,7 +6,11 @@
       <% featured_episode = Episode.random %>
       <h5>Featured Episode</h5>
       <h2> <%= link_to featured_episode.title, episode_path(featured_episode) %> </h2>
-      <h5> <%= featured_episode.rating.round(1) %> of 5 stars </h5>
+      <% if featured_episode.rating %>
+        <h5> <%= featured_episode.rating.round(1) %> of 5 stars </h5>
+      <% else %>
+        <h5>Currently unrated</h5>
+      <% end %>
       <h4>Season <%= featured_episode.season %>, Episode <%= featured_episode.number %> </h4>
     </div>
   </div>

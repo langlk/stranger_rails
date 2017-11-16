@@ -40,8 +40,6 @@ _This is a fan site for the Netflix show_ Stranger Things. _It allows users to a
 
 ## Planned Functionality
 
-* Featured Episode
-
 * For Friday Project Practice:
   * Integration Testing
   * bootstrap moar
