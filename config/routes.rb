@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :scenes, only: [:index]
   resources :reviews, only: [:index]
 
+  resources :users, only: [:show]
+
   resources :episodes do
     resources :scenes, shallow: true
     resources :reviews, shallow: true

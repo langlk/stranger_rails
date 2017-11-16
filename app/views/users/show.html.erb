@@ -1,0 +1,14 @@
+<h5>User Profile</h5>
+
+<h1><%= @user.name %></h1>
+
+<% if @user.reviews.any? %>
+  <h2>Reviews:</h2>
+  <ul>
+    <% @user.reviews.each do |review| %>
+      <li><%= link_to review.episode.title, review_path(review) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>This user has no reviews saved.</h3>
+<% end %>
