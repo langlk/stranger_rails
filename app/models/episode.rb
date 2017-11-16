@@ -6,4 +6,11 @@ class Episode < ActiveRecord::Base
 
   scope :chronological, -> { order(season: :asc, number: :asc) }
   scope :alphabetical, -> { order(:title) }
+
+  def rating
+    rating_total = self.reviews.reduce(0) do |sum, review|
+      sum + review.rating
+    end
+    rating_total.to_f / self.reviews.length
+  end
 end

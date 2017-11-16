@@ -50,4 +50,27 @@ describe Episode do
       expect(Episode.alphabetical).to eq([e3, e1, e2])
     end
   end
+
+  describe '#rating' do
+    it "returns the average rating across all reviews" do
+      e1 = Episode.create(
+        title: "The Vanishing of Will Byers",
+        season: 1,
+        number: 1
+      )
+      r1 = Review.create(
+        episode_id: e1.id,
+        content: "Test1",
+        author: "Test1",
+        rating: 4
+      )
+      r2 = Review.create(
+        episode_id: e1.id,
+        content: "Test2",
+        author: "Test2",
+        rating: 3
+      )
+      expect(e1.rating).to eq(3.5)
+    end
+  end
 end
