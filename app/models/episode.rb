@@ -6,6 +6,13 @@ class Episode < ActiveRecord::Base
 
   scope :chronological, -> { order(season: :asc, number: :asc) }
   scope :alphabetical, -> { order(:title) }
+  scope :most_reviewed, -> {(
+    select("episodes.id, episodes.title, count(reviews.id) as reviews_count")
+    .joins(:reviews)
+    .group("episodes.id")
+    .order("reviews_count DESC")
+    .limit(5)
+    )}
 
   def rating
     if self.reviews.any?
