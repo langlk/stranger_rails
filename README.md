@@ -48,3 +48,4 @@
   * Faker seeding
   * :error flash messages
   * bootstrap moar
+  * README set-up instructions

@@ -36,7 +36,7 @@
 
       <div class="user-info">
         <% if current_user %>
-          <p>Signed in as: <%= current_user.email %></p>
+          <p>Signed in as: <%= current_user.name %></p>
           <p><%= link_to "Sign Out", '/signout' %></p>
         <% else %>
           <p> <%= link_to "Sign In", '/signin' %> | <%= link_to "Sign Up", '/signup' %> </p>
