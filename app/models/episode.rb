@@ -13,6 +13,13 @@ class Episode < ActiveRecord::Base
     .order("reviews_count DESC")
     .limit(5)
     )}
+    scope :unreviewed, -> {(
+      select("episodes.id, episodes.title, episodes.season, episodes.number, count(reviews.id) as reviews_count")
+      .joins(:reviews)
+      .group("episodes.id")
+      .order("reviews_count ASC")
+      .limit(5)
+      )}
 
   def rating
     if self.reviews.any?
