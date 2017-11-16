@@ -10,7 +10,7 @@
   <ul>
     <% @reviews.each do |review| %>
       <li>
-        <%= link_to "#{review.episode.title} by #{review.author}", review_path(review) %>
+        <%= link_to "#{review.episode.title} by #{review.user.name}", review_path(review) %>
       </li>
     <% end %>
   </ul>

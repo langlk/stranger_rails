@@ -20,6 +20,7 @@ class ReviewsController < ApplicationController
   def create
     @episode = Episode.find(params[:episode_id])
     @review = @episode.reviews.new(review_params)
+    @review.user = current_user
     if @review.save
       flash[:notice] = "Review created!"
       redirect_to review_path(@review)
@@ -52,6 +53,6 @@ class ReviewsController < ApplicationController
 
 private
   def review_params
-    params.require(:review).permit(:content, :episode_id, :author, :rating)
+    params.require(:review).permit(:content, :episode_id, :rating)
   end
 end

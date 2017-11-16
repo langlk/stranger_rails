@@ -1,7 +1,7 @@
 <h5> <%= link_to "Go to Episode", episode_path(@review.episode) %> </h5>
 <h1>Review of <%= @review.episode.title %> </h1>
 
-<h3>By <%= @review.author %></h3>
+<h3>By <%= @review.user.name %></h3>
 
 <p> <%= @review.content %> </p>
 
