@@ -19,7 +19,6 @@
           <li> <%= link_to "Plotlines", plotlines_path %> </li>
           <li> <%= link_to "Scenes", scenes_path %> </li>
           <li> <%= link_to "Reviews", reviews_path %> </li>
-
         </ul>
       </div>
     </nav>
@@ -29,6 +28,21 @@
           <%= flash[:notice] %>
         </div>
       <% end %>
+      <% if flash[:alert] %>
+        <div class="alert alert-danger">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+
+      <div class="user-info">
+        <% if current_user %>
+          <p>Signed in as: <%= current_user.email %></p>
+          <p><%= link_to "Sign Out", '/signout' %></p>
+        <% else %>
+          <p> <%= link_to "Sign In", '/signin' %> | <%= link_to "Sign Up", '/signup' %> </p>
+        <% end %>
+      </div>
+
       <%= yield %>
     </div>
   </body>
