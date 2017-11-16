@@ -58,16 +58,22 @@ describe Episode do
         season: 1,
         number: 1
       )
+      u1 = User.create(
+        name: "Test1",
+        email: "Test@test.com",
+        password: "password",
+        password_confirmation: "password"
+      )
       r1 = Review.create(
         episode_id: e1.id,
         content: "Test1",
-        author: "Test1",
+        user_id: u1.id,
         rating: 4
       )
       r2 = Review.create(
         episode_id: e1.id,
         content: "Test2",
-        author: "Test2",
+        user_id: u1.id,
         rating: 3
       )
       expect(e1.rating).to eq(3.5)

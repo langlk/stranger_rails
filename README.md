@@ -30,11 +30,11 @@
   * Episode
   * Content
   * Belong to episode
+* Users
+  * Name
 
 ### To Do:
 * Featured Episode (RNG)
-* Users
-  * Name
 * Reviews
   * Belong to user
   * See all reviews in last week
