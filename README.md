@@ -1,5 +1,7 @@
 # Stranger Rails
 
+### Done
+
 * Episodes
   * Title
   * Season
@@ -24,15 +26,25 @@
   * Plotline
   * Description
   * CRUD
+* Reviews
+  * Episode
+  * Content
+  * Belong to episode
+
+### To Do:
 * Featured Episode (RNG)
 * Users
   * Name
 * Reviews
-  * Episode
-  * Content
-  * Belong to episode, user
+  * Belong to user
   * See all reviews in last week
   * Episodes with most reviews
   * Users with most reviews
-  * See which Episodes have been reviewed by a user
+  * See which Episodes have been reviewed by a specific user
   * See Episodes with no reviews
+
+* For Friday Project Practice:
+  * Integration Testing
+  * Faker seeding
+  * :error flash messages
+  * bootstrap moar
