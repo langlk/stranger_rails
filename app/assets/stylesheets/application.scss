@@ -14,8 +14,27 @@
   width: 50%;
 }
 
+.featured {
+  display: flex;
+  justify-content: center;
+}
+
+.featured-content {
+  width: 40%;
+  padding: 1em;
+  border: 2px solid gray;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 780px) {
+  .featured-content {
+    width: 80%;
+  }
+}
+
 @media screen and (max-width: 560px) {
   .categories div {
     width: 90%;
   }
+
 }

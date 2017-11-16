@@ -1,6 +1,15 @@
 <h1>Episodes</h1>
 
 <% if @episodes.any? %>
+  <div class="featured">
+    <div class="featured-content">
+      <% featured_episode = Episode.random %>
+      <h5>Featured Episode</h5>
+      <h2> <%= link_to featured_episode.title, episode_path(featured_episode) %> </h2>
+      <h5> <%= featured_episode.rating.round(1) %> of 5 stars </h5>
+      <h4>Season <%= featured_episode.season %>, Episode <%= featured_episode.number %> </h4>
+    </div>
+  </div>
   <div class="categories episode-categories">
     <% if Episode.most_reviewed.length > 0 %>
       <div class="most-reviewed">

@@ -19,6 +19,7 @@ class Episode < ActiveRecord::Base
       .order(:season, :number)
       .limit(5)
     }
+  scope :random, -> { order("RANDOM()").first }
 
   def rating
     if self.reviews.any?
