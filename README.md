@@ -44,7 +44,6 @@ _This is a fan site for the Netflix show_ Stranger Things. _It allows users to a
 
 * For Friday Project Practice:
   * Integration Testing
-  * Faker seeding
   * bootstrap moar
 
 ## Support and contact details
