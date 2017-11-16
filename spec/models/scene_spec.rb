@@ -10,8 +10,8 @@ describe Scene do
 
   describe ".intersect" do
     it "should return the scenes that belong to both the plotline and the episode provided" do
-      e1 = Episode.create(title: "Test1", season: 1, number: 1, rating: 0)
-      e2 = Episode.create(title: "Test2", season: 2, number: 2, rating: 0)
+      e1 = Episode.create(title: "Test1", season: 1, number: 1)
+      e2 = Episode.create(title: "Test2", season: 2, number: 2)
       p1 = Plotline.create(name: "Test1", description: "Test1")
       p2 = Plotline.create(name: "Test2", description: "Test2")
       s1 = Scene.create(description: "Test1", plotline_id: p1.id, episode_id: e1.id)

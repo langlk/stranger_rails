@@ -4,7 +4,6 @@ describe Episode do
   it { should validate_presence_of :title }
   it { should validate_presence_of :season }
   it { should validate_presence_of :number }
-  it { should validate_presence_of :rating }
 
   it { should have_many :scenes }
   it { should have_many :plotlines }
@@ -15,20 +14,17 @@ describe Episode do
       e1 = Episode.create(
         title: "The Vanishing of Will Byers",
         season: 1,
-        number: 1,
-        rating: 4
+        number: 1
       )
       e3 = Episode.create(
       title: "Madmax",
       season: 2,
-      number: 1,
-      rating: 4
+      number: 1
       )
       e2 = Episode.create(
         title: "The Weirdo on Maple Street",
         season: 1,
-        number: 2,
-        rating: 4
+        number: 2
       )
       expect(Episode.chronological).to eq([e1, e2, e3])
     end
@@ -39,20 +35,17 @@ describe Episode do
       e1 = Episode.create(
         title: "The Vanishing of Will Byers",
         season: 1,
-        number: 1,
-        rating: 4
+        number: 1
       )
       e3 = Episode.create(
       title: "Madmax",
       season: 2,
-      number: 1,
-      rating: 4
+      number: 1
       )
       e2 = Episode.create(
         title: "The Weirdo on Maple Street",
         season: 1,
-        number: 2,
-        rating: 4
+        number: 2
       )
       expect(Episode.alphabetical).to eq([e3, e1, e2])
     end
