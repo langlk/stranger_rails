@@ -15,7 +15,25 @@
         </ol>
       </div>
     <% end %>
+    <div class="recent-reviews">
+      <h3>Just in from the Upside Down:</h3>
+      <% if Review.recent.any? %>
+      <ul>
+        <% Review.recent.each do |review| %>
+          <li> <%= link_to "#{review.episode.title} by #{review.user.name}", review_path(review) %> </li>
+        <% end %>
+      </ul>
+      <% else %>
+        <h5>Eleven must have sealed the Gate! There are no recent reviews.</h5>
+      <% end %>
+    </div>
+
+
+
+
+
   </div>
+  <h3>All Reviews:</h3>
 <% end %>
 
 <% if @reviews.any? %>
