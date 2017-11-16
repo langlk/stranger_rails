@@ -30,17 +30,17 @@
   * Episode
   * Content
   * Belong to episode
+  * Belong to user
+  * See which Episodes have been reviewed by a specific user
+  * Users with most reviews
 * Users
   * Name
 
 ### To Do:
 * Featured Episode (RNG)
 * Reviews
-  * Belong to user
   * See all reviews in last week
   * Episodes with most reviews
-  * Users with most reviews
-  * See which Episodes have been reviewed by a specific user
   * See Episodes with no reviews
 
 * For Friday Project Practice:
