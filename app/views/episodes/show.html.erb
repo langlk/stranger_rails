@@ -1,5 +1,9 @@
 <h1> <%= @episode.title %> </h1>
-<h4>Rated <%= @episode.rating %> of 5 stars</h4>
+<% if @episode.rating %>
+  <h4>Rated <%= @episode.rating %> of 5 stars</h4>
+<% else %>
+  <h4>This episode has not been rated. Be the first to <%= link_to "write a review.", new_episode_review_path(@episode) %> </h4>
+<% end %>
 <hr>
 <h3> Season <%= @episode.season %>, Episode <%= @episode.number %> </h3>
 

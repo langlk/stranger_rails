@@ -72,5 +72,14 @@ describe Episode do
       )
       expect(e1.rating).to eq(3.5)
     end
+
+    it "returns nil if no reviews" do
+      e1 = Episode.create(
+        title: "The Vanishing of Will Byers",
+        season: 1,
+        number: 1
+      )
+      expect(e1.rating).to eq(nil)
+    end
   end
 end
