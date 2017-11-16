@@ -4,3 +4,18 @@
 .user-info {
   text-align: right;
 }
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.categories div {
+  width: 50%;
+}
+
+@media screen and (max-width: 560px) {
+  .categories div {
+    width: 90%;
+  }
+}

@@ -4,7 +4,7 @@
   <p> <%= link_to "Write a Review", new_episode_review_path(@episode) %> </p>
 <% else %>
   <h1>Reviews</h1>
-  <div class="categories">
+  <div class="categories review-categories">
     <% if User.top_reviewers %>
       <div class="top-reviewers">
         <h3>Top Eleven Reviewers:</h3>

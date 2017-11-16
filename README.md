@@ -33,13 +33,13 @@
   * Belong to user
   * See which Episodes have been reviewed by a specific user
   * Users with most reviews
+  * See all reviews in last week
 * Users
   * Name
 
 ### To Do:
 * Featured Episode (RNG)
 * Reviews
-  * See all reviews in last week
   * Episodes with most reviews
   * See Episodes with no reviews
 
