@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'rails-ujs'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'bcrypt', '~> 3.1.7'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug', platform: :mri

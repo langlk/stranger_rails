@@ -12,6 +12,7 @@ _This is a fan site for the Netflix show_ Stranger Things. _It allows users to a
 
 * Clone this repository
 * From the project root directory, run the following commands:
+  * **Note: seeding the database will remove all existing data and replace it.**
   ```
   bundle install
   rake db:create

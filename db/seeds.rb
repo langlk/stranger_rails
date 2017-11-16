@@ -5,6 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Episode.destroy_all
+Review.destroy_all
+Scene.destroy_all
+Plotline.destroy_all
+User.destroy_all
 
 plotlines = [
   ['Eleven', 'Adventures of Eleven, Wunderkid.'],
@@ -37,7 +42,33 @@ episodes = [
   ['The Mind Flayer', 2, 8, 'The group manages to escape Hawkins Lab, and they retreat to the Byers house to question Will as to how to defeat the Shadow Monster.'],
   ['The Gate', 2, 9, 'Eleven returns to help the others defeat the Mind Flayer, but first they have to evice its presence from Will or he will die with the creature and its demo-dogs.']
 ]
-
+epnames = []
 episodes.each do |episode_title, episode_season, episode_number, episode_description|
+  epnames.push(episode_title)
   Episode.create(title: episode_title, season: episode_season, number: episode_number, description: episode_description)
+end
+
+users = []
+
+11.times do
+  character = Faker::TwinPeaks.unique.character
+  password = Faker::TwinPeaks.unique.location
+  users.push(User.create!(name: character,
+                      email: character + '@twinpeaks.gov',
+                      password: password,
+                      password_confirmation: password))
+end
+
+p "Created #{User.count} users"
+
+rng = Random.new
+
+epnames.each do |name|
+  e = Episode.find_by(title: name)
+
+  3.times do
+    e.reviews.create!(rating: rng.rand(1..5),
+                    content: Faker::TwinPeaks.quote,
+                    user: users[rng.rand(11)])
+  end
 end
