@@ -5,7 +5,7 @@
 <% else %>
   <h1>Reviews</h1>
   <div class="categories review-categories">
-    <% if User.top_reviewers %>
+    <% if User.top_reviewers.length != 0 %>
       <div class="top-reviewers">
         <h3>Top Eleven Reviewers:</h3>
         <ol>

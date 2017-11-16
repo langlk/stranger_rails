@@ -12,7 +12,18 @@
         </ol>
       </div>
     <% end %>
-    
+  </div>
+  <div class="categories episode-categories">
+    <% if Episode.unreviewed.length > 0 %>
+      <div class="most-reviewed">
+        <h3>Be the first to Review:</h3>
+        <ul>
+          <% Episode.unreviewed.each do |episode| %>
+          <li> <%= link_to episode.title, episode_path(episode) %> </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   </div>
 
   <h2>All Episodes</h2>

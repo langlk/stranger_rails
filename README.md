@@ -34,13 +34,13 @@
   * See which Episodes have been reviewed by a specific user
   * Users with most reviews
   * See all reviews in last week
+  * Episodes with most reviews
 * Users
   * Name
 
 ### To Do:
 * Featured Episode (RNG)
 * Reviews
-  * Episodes with most reviews
   * See Episodes with no reviews
 
 * For Friday Project Practice:
