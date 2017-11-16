@@ -22,6 +22,7 @@ class ScenesController < ApplicationController
       flash[:notice] = "Scene created!"
       redirect_to scene_path(@scene)
     else
+      @episode = @scene.episode
       render :new
     end
   end

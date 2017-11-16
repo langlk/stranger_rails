@@ -12,9 +12,7 @@
         </ol>
       </div>
     <% end %>
-  </div>
-  <div class="categories episode-categories">
-    <% if Episode.unreviewed.length > 0 %>
+    <% if (Episode.unreviewed.length > 0) & (current_user) %>
       <div class="most-reviewed">
         <h3>Be the first to Review:</h3>
         <ul>
