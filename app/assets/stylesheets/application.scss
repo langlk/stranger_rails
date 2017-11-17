@@ -15,10 +15,18 @@ body {
   background-color: transparent;
 }
 
+a {
+  color: #6d0f0f;
+}
+
+a:hover {
+  color: #646f84;
+}
+
 .container {
   padding-top: .7em;
   background-color: rgba(220, 212, 195, 0.75);
-  height: 90vh;
+  min-height: 90vh;
 }
 
 .navbar-brand, h1 {
@@ -73,6 +81,20 @@ body {
   width: 200px;
   display: inline-block;
   margin-bottom: .7em;
+}
+
+.panel-default.plotline {
+  margin: 1.8em;
+  background-color: black;
+  border-color: black;
+}
+
+.panel-default.plotline a {
+  color: #9e1919;
+}
+
+.panel-default.plotline a:hover {
+  color: #d82424;
 }
 
 @media screen and (max-width: 780px) {
