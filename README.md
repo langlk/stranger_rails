@@ -38,12 +38,6 @@ _This is a fan site for the Netflix show_ Stranger Things. _It allows users to a
   * Recent reviews (within the past week)
   * Users with the most reviews
 
-## Planned Functionality
-
-* For Friday Project Practice:
-  * Integration Testing
-  * bootstrap moar
-
 ## Support and contact details
 
 _Please contact [kels.langlois@gmail.com](mailto:kels.langlois@gmail.com) or [ldmackrell@gmail.com](mailto: ldmackrell@gmail.com) with questions, comments, or issues._

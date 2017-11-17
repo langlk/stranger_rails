@@ -1,5 +1,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Jacques+Francois+Shadow|Merriweather');
+
+body {
+  font-family: 'Merriweather', serif;
+}
+
+.navbar-brand, h1 {
+  font-family: 'Jacques Francois Shadow', serif;
+}
 
 .btn {
   background-color: #ddd;
