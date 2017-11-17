@@ -2,12 +2,36 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Jacques+Francois+Shadow|Merriweather');
 
+html {
+  background: url("bg.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body {
   font-family: 'Merriweather', serif;
+  background-color: transparent;
+}
+
+.container {
+  padding-top: .7em;
+  background-color: rgba(220, 212, 195, 0.75);
+  height: 90vh;
 }
 
 .navbar-brand, h1 {
   font-family: 'Jacques Francois Shadow', serif;
+}
+
+.navbar-inverse a.navbar-brand {
+  color: #b31d1d;
+  font-size: 28px;
+}
+
+.navbar-inverse a.navbar-brand:hover {
+  color: #d82424;
 }
 
 .btn {
@@ -48,6 +72,7 @@ body {
 .episode-sort {
   width: 200px;
   display: inline-block;
+  margin-bottom: .7em;
 }
 
 @media screen and (max-width: 780px) {
