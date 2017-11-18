@@ -1,4 +1,7 @@
 <h1>Episodes</h1>
+<% if current_user && current_user.admin %>
+  <p> <%= link_to "Add an Episode", new_episode_path %> </p>
+<% end %>
 
 <% if @episodes.any? %>
   <div class="featured">
@@ -14,6 +17,7 @@
       <h4>Season <%= featured_episode.season %>, Episode <%= featured_episode.number %> </h4>
     </div>
   </div>
+
   <div class="categories episode-categories">
     <% if Episode.most_reviewed.length > 0 %>
       <div class="most-reviewed">
@@ -25,6 +29,7 @@
         </ol>
       </div>
     <% end %>
+
     <% if (Episode.unreviewed.length > 0) & (current_user) %>
       <div class="most-reviewed">
         <h3>Be the first to Review:</h3>
@@ -54,5 +59,3 @@
 <% else %>
   <h3>There are no episodes saved!</h3>
 <% end %>
-
-<p> <%= link_to "Add an Episode", new_episode_path %> </p>

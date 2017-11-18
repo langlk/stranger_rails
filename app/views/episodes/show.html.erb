@@ -14,10 +14,12 @@
 <h4> <%= link_to "Reviews of this Episode", episode_reviews_path(@episode) %> </h4>
 
 <hr>
-<p>
-  <%= link_to "Edit", edit_episode_path(@episode) %> |
-  <%= link_to "Delete", episode_path(@episode), data: {
-    confirm: "This will delete all content for this episode. Are you sure?",
-    method: "delete"
-  } %>
-</p>
+<% if current_user && current_user.admin %>
+  <p>
+    <%= link_to "Edit", edit_episode_path(@episode) %> |
+    <%= link_to "Delete", episode_path(@episode), data: {
+      confirm: "This will delete all content for this episode. Are you sure?",
+      method: "delete"
+    } %>
+  </p>
+<% end %>
