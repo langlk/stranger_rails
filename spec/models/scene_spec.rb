@@ -7,6 +7,7 @@ describe Scene do
 
   it { should belong_to :episode }
   it { should belong_to :plotline }
+  it { should belong_to :user }
 
   describe ".intersect" do
     it "should return the scenes that belong to both the plotline and the episode provided" do

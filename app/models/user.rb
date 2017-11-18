@@ -2,6 +2,7 @@ class User < ApplicationRecord
   attr_accessor :password
 
   has_many :reviews
+  has_many :scenes
   validates_confirmation_of :password
   validates :email, :name, presence: true, uniqueness: true
   before_save :encrypt_password
