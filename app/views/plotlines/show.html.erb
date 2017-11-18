@@ -2,7 +2,9 @@
 
 <p><%= @plotline.description %></p>
 
-<p> <%= link_to "Add a Scene", new_plotline_scene_path(@plotline) %> </p>
+<% if current_user %>
+  <p> <%= link_to "Add a Scene", new_plotline_scene_path(@plotline) %> </p>
+<% end %>
 
 <% if @plotline.episodes.any? %>
   <h3>Furthered In</h3>

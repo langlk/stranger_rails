@@ -6,10 +6,19 @@
 
 <h4> Plotline: <%= link_to @scene.plotline.name, plotline_path(@scene.plotline) %> </h4>
 <hr>
-<p>
-  <%= link_to "Edit", edit_scene_path(@scene) %> |
-  <%= link_to "Delete", scene_path(@scene), data: {
+<% if current_user == @scene.user %>
+  <p>
+    <%= link_to "Edit", edit_scene_path(@scene) %> |
+    <%= link_to "Delete", scene_path(@scene), data: {
+        confirm: "This will delete all content for this scene. Are you sure?",
+        method: "delete"
+      } %>
+  </p>
+<% elsif current_user && current_user.admin %>
+  <p>
+    <%= link_to "Delete", scene_path(@scene), data: {
       confirm: "This will delete all content for this scene. Are you sure?",
       method: "delete"
     } %>
-</p>
+  </p>
+<% end %>
