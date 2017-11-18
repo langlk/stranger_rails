@@ -72,3 +72,10 @@ epnames.each do |name|
                     user: users[rng.rand(11)])
   end
 end
+
+User.create!(name: "Administrator",
+  email: "admin@strangerrails.com",
+  password: "correct horse battery staple",
+  password_confirmation: "correct horse battery staple",
+  admin: true
+)

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   attr_accessor :password
+
   has_many :reviews
   validates_confirmation_of :password
   validates :email, :name, presence: true, uniqueness: true
