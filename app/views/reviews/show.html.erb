@@ -16,4 +16,11 @@
       method: "delete"
     } %>
   </p>
+<% elsif current_user && current_user.admin %>
+  <p>
+    <%= link_to "Delete", review_path(@review), data: {
+    confirm: "This will delete all content for this review. Are you sure?",
+    method: "delete"
+    } %>
+  </p>
 <% end %>
