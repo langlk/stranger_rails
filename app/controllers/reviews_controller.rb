@@ -65,7 +65,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
-    if current_user && (current_user != @review.user) && !current_user.is_admin?
+    if !current_user || ((current_user != @review.user) && !current_user.is_admin?)
       flash[:alert] = "Seriously, kid. How did you get in here? This area is off-limits."
       redirect_to review_path(@review)
     else
