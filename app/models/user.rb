@@ -14,6 +14,11 @@ class User < ApplicationRecord
     .limit(11)
     )}
 
+  def is_admin?
+    user_record = User.find(self.id)
+    return user_record.admin
+  end
+
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt
     self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)

@@ -18,7 +18,7 @@ class EpisodesController < ApplicationController
   end
 
   def new
-    if current_user && current_user.admin
+    if current_user && current_user.is_admin?
       @episode = Episode.new
     else
       flash[:alert] = "This area has been quarantined. Please keep a safe distance."
@@ -27,7 +27,7 @@ class EpisodesController < ApplicationController
   end
 
   def create
-    if current_user && current_user.admin
+    if current_user && current_user.is_admin?
       @episode = Episode.new(episode_params)
       if @episode.save
         flash[:notice] = "Episode created!"
@@ -43,7 +43,7 @@ class EpisodesController < ApplicationController
 
   def edit
     @episode = Episode.find(params[:id])
-    if current_user && current_user.admin
+    if current_user && current_user.is_admin?
       render :edit
     else
       flash[:alert] = "Authorized Hawkins Lab employees only beyond this point."
@@ -53,7 +53,7 @@ class EpisodesController < ApplicationController
 
   def update
     @episode = Episode.find(params[:id])
-    if current_user && current_user.admin
+    if current_user && current_user.is_admin?
       if @episode.update(episode_params)
         flash[:notice] = "Episode updated!"
         redirect_to episode_path(@episode)
@@ -68,7 +68,7 @@ class EpisodesController < ApplicationController
 
   def destroy
     @episode = Episode.find(params[:id])
-    if current_user && current_user.admin
+    if current_user && current_user.is_admin?
       @episode.reviews.each do |review|
         review.destroy
       end
